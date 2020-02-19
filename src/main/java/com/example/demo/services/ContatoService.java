@@ -35,7 +35,7 @@ public class ContatoService {
 	              .orElse(ResponseEntity.notFound().build());
 	}
 	
-	public List<Contato> retornarPratos(){
+	public List<Contato> retornarContatos(){
 		return iContatoRepository.findAll();
 	}
 

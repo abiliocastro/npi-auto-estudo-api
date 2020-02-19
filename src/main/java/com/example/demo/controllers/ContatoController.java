@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +31,11 @@ public class ContatoController {
    @GetMapping(path = {"/{id}"})
    public ResponseEntity<Contato> findById(@PathVariable long id){
 	   return contatoService.obterContato(id);
+   }
+   
+   @GetMapping
+   public List<Contato> findAll(){
+      return contatoService.retornarContatos();
    }
    
    @PutMapping(path= {"/{id}"})
